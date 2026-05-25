@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: dim_agents
+    description: "SCD Type 2 agent dimension. One row per agent per team
+      assignment period. Use is_current = true for current state."
+    columns:
+      - name: agent_key
+        tests: [unique, not_null]
+      - name: agent_id
+        tests: [not_null]
+      - name: assigned_team
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - billing
+                  - technical
+                  - general
+                  - escalations
+
+  - name: fct_tickets
+    description: "One row per ticket with agent and customer context,
+      SLA performance, and derived metrics."
+    columns:
+      - name: ticket_id
+        tests: [unique, not_null]
+      - name: sla_performance
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - within_sla
+                  - slightly_breached
+                  - severely_breached
+
+  - name: fct_agent_performance
+    description: "One row per agent per week. Weekly KPIs including
+      CSAT, SLA breach rate, and escalation rate."
+    columns:
+      - name: performance_key
+        tests: [unique, not_null]
+      - name: agent_id
+        tests: [not_null]
+
+  - name: fct_customer_health
+    description: "One row per customer. Aggregated support health
+      signals including escalation rate, CSAT, and health tier."
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+      - name: health_tier
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - at_risk
+                  - needs_attention
+                  - no_contact
+                  - healthy

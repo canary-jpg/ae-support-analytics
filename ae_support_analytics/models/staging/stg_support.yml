@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: stg_support__agents
+    description: "Cleaned agents table. One row per agent."
+    columns:
+      - name: agent_id
+        tests:
+          - unique
+          - not_null
+      - name: agent_level
+        tests:
+          - accepted_values:
+                arguments:
+                  values: [junior, mid, senior]
+      - name: team
+        tests:
+          - accepted_values:
+              arguments:
+                  values: [billing, technical, general, escalations]
+
+  - name: stg_support__agent_team_history
+    description: "Agent team assignment history. One row per assignment period."
+    columns:
+      - name: history_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_support__customers
+    description: "Cleaned customers table. One row per customer."
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: plan
+        tests:
+          - accepted_values:
+              arguments:
+                  values: [free, starter, pro, enterprise]
+
+  - name: stg_support__tickets
+    description: "Cleaned tickets table. One row per ticket."
+    columns:
+      - name: ticket_id
+        tests:
+          - unique
+          - not_null
+      - name: priority
+        tests:
+          - accepted_values:
+              arguments:
+                  values: [low, normal, high, urgent]
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                  values: [open, pending, solved, closed]
+
+  - name: stg_support__ticket_comments
+    description: "Cleaned ticket comments. One row per comment."
+    columns:
+      - name: comment_id
+        tests:
+          - unique
+          - not_null
+      - name: author_type
+        tests:
+          - accepted_values:
+              arguments:
+                  values: [agent, customer]

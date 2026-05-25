@@ -1,0 +1,17 @@
+# dbt
+ae_support_analytics/target/
+ae_support_analytics/dbt_packages/
+ae_support_analytics/logs/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# ML artifacts
+ml/models/*.pkl
+
+# credentials
+.env
+*.json
+profiles.yml

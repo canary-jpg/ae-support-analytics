@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fct_ticket_scores
+    description: "One row per ticket with NLP category predictions and
+      escalation risk scores from XGBoost model. Included routing recommendations
+      and high-value-at-risk flags."
+    columns:
+      - name: ticket_id
+        tests:
+          - unique
+          - not_null
+      - name: escalation_risk_tier
+        tests:
+          - accepted_values:
+              arguments:
+                  values:
+                    - low
+                    - medium
+                    - high
+                    - critical
+                    - nan
+      - name: predicted_category
+        tests:
+          - not_null

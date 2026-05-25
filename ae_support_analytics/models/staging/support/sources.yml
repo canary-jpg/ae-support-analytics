@@ -1,0 +1,61 @@
+version: 2
+
+sources:
+  - name: support
+    database: ae-project-portfolio
+    schema: support_raw
+    description: "Synthethic customer support data for a fictional SaaS company"
+
+    tables:
+      - name: agents
+        description: "Support agents"
+        columns:
+          - name: agent_id
+            tests:
+              - unique
+              - not_null
+
+      - name: agent_team_history
+        description: "Historical team assignments per agent - used for SCD Type 2"
+        columns:
+          - name: history_id
+            tests:
+              - unique
+              - not_null
+          - name: agent_id
+            tests:
+              - not_null
+
+      - name: customers
+        description: "Customer accounts"
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+              - not_null
+
+      - name: tickets
+        description: "Support tickets"
+        columns:
+          - name: ticket_id
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            tests:
+              - not_null
+          - name: agent_id
+            tests:
+              - not_null
+      
+      - name: ticket_comments
+        description: "Comments on support tickets"
+        columns:
+          - name: comment_id
+            tests:
+              - unique
+              - not_null
+          - name: ticket_id
+            tests:
+              - not_null
+          
