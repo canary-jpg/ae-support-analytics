@@ -20,6 +20,11 @@ This is Project 2 of a 5-project analytics engineering portfolio.
 Synthetic Data (Python generator) → Staging Layer (dbt views) - cleaned, typed, renamed → Marts Layers (dbt tables) - SLA metrics, agent KPIs, customer health → Analysis Notebooks (Python) - SLA analysis, agent performance → ML Models (sklear + XGBoost) - NLP category classifier, escalation prediction → ML Output (dbt table) - predictions surfaced alongside ticket context
 ```
 
+## Lineage
+
+<img width="1291" height="752" alt="support_lineage" src="https://github.com/user-attachments/assets/2f4c16d2-e399-4e27-93fd-0abd2d5f613c" />
+
+
 ## Project Structure
 
 ```
