@@ -2,6 +2,18 @@
 
 An end-to-end analytics engineering project built on synthetic customer support data for a fictional SaaS company. Demonstrates SCD Type 2 modeling, SLA analytics, NLP ticket classification, and escalation prediction.
 
+## Portfolio Context
+
+This is Project 2 of a 5-project analytics engineering portfolio.
+
+| Project | Domain | Key Patterns |
+|---|---|---|
+| [Project 1 — Product Analytics](https://github.com/canary-jpg/ae-product-analytics) | eCommerce | Sessionization, cohort retention, churn model |
+| **Project 2 — Support Analytics** *(this repo)* | SaaS Support | SCD Type 2, NLP classification, escalation prediction |
+| Project 3 — Disease Surveillance *(coming soon)* | Public Health | Incremental models, outbreak detection, forecasting |
+| Project 4 — Health Outcomes *(coming soon)* | Clinical | Survival analysis, readmission prediction |
+| Project 5 — Metrics Layer *(coming soon)* | Cross-domain | dbt Semantic Layer, unified metric definitions |
+
 ## Architecture
 
 ```
