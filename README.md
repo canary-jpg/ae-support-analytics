@@ -11,7 +11,7 @@ This is Project 2 of a 5-project analytics engineering portfolio.
 | [Project 1 — Product Analytics](https://github.com/canary-jpg/ae-product-analytics) | eCommerce | Sessionization, cohort retention, churn model |
 | **Project 2 — Support Analytics** *(this repo)* | SaaS Support | SCD Type 2, NLP classification, escalation prediction |
 | [Project 3 - Disease Surveillance](https://github.com/canary-jpg/ae-disease-surveillance) | Public Health | Incremental models, outbreak detection, forecasting |
-| Project 4 — Health Outcomes *(coming soon)* | Clinical | Survival analysis, readmission prediction |
+| [Project 4 — Health Outcomes](https://github.com/canary-jpg/ae-health-outcomes) | Clinical | Survival analysis, readmission prediction |
 | Project 5 — Metrics Layer *(coming soon)* | Cross-domain | dbt Semantic Layer, unified metric definitions |
 
 ## Architecture
